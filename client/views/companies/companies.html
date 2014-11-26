@@ -1,0 +1,73 @@
+<template name="companies">
+
+<div class="ui stackable grid">
+    <div class="four wide column">
+
+    </div>
+    <div class="ten wide column">
+        <div class="ui blue segment">
+            <div class="ui stackable grid">
+                <div class="eight wide column">
+                    {{> companiesForm }}
+                </div>
+                <div class="eight wide column">
+                    <h2 class="ui right floated header">Empresas</h2>
+                </div>
+            </div>
+            <div class="ui clearing divider"></div>
+
+        <table class="ui celled striped table">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each companies}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>
+                            <a href="#" class="btn default btn-xs red delete">
+                                <i class="icon-close"></i>
+                                Eliminar
+                            </a>
+                            <a href="#" class="btn default btn-xs green edit">
+                                <i class="icon-pencil"></i>
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+    <div id="confirmaEliminarEmpresa" class="ui basic modal">
+        <div class="header">
+            Eliminar Empresa
+        </div>
+        <div class="content">
+            <div class="image">
+                <i class="archive icon"></i>
+            </div>
+            <div class="description">
+                <p>Esta seguro de querer eliminar la empresa <b>{{empresaSeleccionada.title}}?</b></p>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="two fluid ui inverted buttons">
+                <div class="ui red basic inverted button negative">
+                    <i class="remove icon"></i>
+                    No
+                </div>
+                <div class="ui green basic inverted button positive">
+                    <i class="checkmark icon"></i>
+                    Si, estoy seguro
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,20 @@
+<template name="login">
+    <form id="login-form" class="uk-panel uk-panel-box uk-form">
+		<div class="uk-form-row">
+		  <input id="login-email" type="text" class="uk-width-1-1 uk-form-large" placeholder="Email" required="" autofocus="">
+    </div>
+    <div class="uk-form-row">
+		  <input id="login-password" type="password" class="uk-width-1-1 uk-form-large" placeholder="Contraseña" required="">
+    </div>
+    <div class="uk-form-row">
+  		<button class="uk-width-1-1 uk-button uk-button-primary uk-button-large" type="submit">
+  			Entrar
+        <i class="batch" data-icon="&#xF000;"></i>
+  		</button>
+    </div>
+    <div class="uk-form-row uk-text-small">
+        <label class="uk-float-left"><input type="checkbox"> Recordarme</label>
+        <a class="uk-float-right uk-link uk-link-muted" href="/register">Registrarse</a>
+    </div>
+	</form>
+</template>

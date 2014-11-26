@@ -1,0 +1,13 @@
+<template name="basicLayout">
+    <div class="container">
+
+        {{> header }}
+
+        <div class="ui stackable grid">
+            <div class="two wide column">{{> sidebar}}</div>
+            <div class="fourteen wide column">{{> yield}}</div>
+        </div>
+
+        {{> footer}}
+    </div>
+</template>

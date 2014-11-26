@@ -1,0 +1,16 @@
+{
+  "libs": [
+    "reserved",
+    "browser",
+    "chai",
+    "ecma5",
+    "browser",
+    "jquery",
+    "lodash"
+  ],
+  "loadEagerly": ["*.js", "*/*.js", "*/*/*.js", "*/*/*/*.js"],
+  "dontLoad": [".meteor"],
+  "plugins": {
+    "meteor": {}
+  }
+}

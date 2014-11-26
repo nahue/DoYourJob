@@ -1,0 +1,2 @@
+Template.loginLayout.rendered = function(){
+};

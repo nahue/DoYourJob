@@ -1,0 +1,40 @@
+<template name="clienteForm">
+  {{#if crear}}
+  <form class="ui form">
+    <select name="company" id="">
+      <option value="">Seleccione una Empresa</option>
+      {{#each companies}}
+      <option value="{{_id}}">{{title}}</option>
+      {{/each}}
+    </select>
+
+    <div class="ui field">
+      <input type="text" id="name" name="name" placeholder="Nombre">
+    </div>
+    <div class="six wide column">
+      <input type="submit" value="Guardar" class="ui primary small labeled button" data-title="Agrega un Cliente">
+    </div>
+  </form>
+  {{else}}
+  <form class="ui form">
+    <div class="content">
+       <input type="hidden" name="client_id" value="{{client_id}}">
+      <select name="company" id="">
+        <option value="">Seleccione una Empresa</option>
+        {{#each companies}}
+        <option value="{{_id}}">{{title}}</option>
+        {{/each}}
+      </select>
+
+      <div class="ui field">
+        <input type="text" id="name" name="name" placeholder="Nombre">
+      </div>
+    </div>
+    <div class="action">
+      <div class="six wide column">
+        <input type="submit" value="Guardar" class="ui primary small labeled button" data-title="Agrega un Cliente">
+      </div>
+    </div>
+  </form>
+  {{/if}}
+</template>
