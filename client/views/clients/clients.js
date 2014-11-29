@@ -25,7 +25,7 @@ Template.clients.events({
   'click .delete': function (e) {
     Events.handleNaturally(e);
     var client_id = this._id;
-    Session.set('clienteSeleccionado', this);
+    Session.set('clienteSeleccionado', this.name);
 
     $('#confirmaEliminarCliente').modal({
       closable: false,

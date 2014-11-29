@@ -18,6 +18,13 @@ CompaniesSchema = new SimpleSchema({
 
 Companies.attachSchema(CompaniesSchema);
 
+// Hooks
+
+Companies.after.remove(function (userId, doc) {
+  Clients.remove({company_id: doc._id})
+});
+
+
 // Collection2 already does schema checking
 // Add custom permission rules if needed
 if (Meteor.isServer) {

@@ -21,4 +21,6 @@ dburles:collection-helpers
 meteorhacks:fast-render
 nooitaf:semantic-ui
 audit-argument-checks
+fourseven:scss
+matb33:collection-hooks
 

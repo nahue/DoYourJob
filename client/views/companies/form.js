@@ -1,7 +1,8 @@
 Template.companiesForm.events({
-    'submit form': function(e, template) {
+    'submit #companiesForm': function(e, template) {
         Events.handleNaturally(e);
         var operacion = $(template.find('form')).data('operacion');
+
         switch (operacion) {
             case "crear":
                 var title = template.find('#title').value;
@@ -9,6 +10,7 @@ Template.companiesForm.events({
                   if (err)
                     console.log(err);
                   template.find('#title').value = "";
+                  console.log("LISTO CREANDO");
                 });
                 break;
             case "editar":

@@ -6,8 +6,8 @@ Template.login.events({
     'submit #login-form' : function(e, t){
         e.preventDefault();
         // retrieve the input field values
-        var email = t.find('#login-email').value
-            , password = t.find('#login-password').value;
+        var email = t.find('input[name=email]').value
+            , password = t.find('input[name=password]').value;
 
         // Trim and validate your fields here....
 
@@ -32,6 +32,33 @@ Template.login.events({
 });
 
 Template.login.rendered = function() {
+  $('body').removeClass('login-layout');
+
   if (Meteor.userId())
-    Router.go('/');
+  {
+    Router.redirect('/');
+  }
+  var form = $('.ui.form');
+  form
+      .form({
+          email: {
+              identifier: 'email',
+              rules: [
+                  {
+                      type  : 'empty',
+                      prompt: 'Por favor ingrese el email.'
+                  }
+              ]
+          },
+          password: {
+              identifier: 'password',
+              rules: [
+                  {
+                      type  : 'empty',
+                      prompt: 'Por favor ingrese la contraseña.'
+                  }
+              ]
+          }
+      });
+  form.find('input[type=submit]').popup();
 };
